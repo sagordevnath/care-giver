@@ -1,11 +1,26 @@
-import React from 'react';
+import React from "react";
+import { Card,  } from "react-bootstrap";
+import './Service.css'
 
-const Service = () => {
-    return (
-        <div>
-            <h2>Single Service page</h2>
-        </div>
-    );
+const Service = ({ service }) => {
+  const { name, price, image, description } = service;
+  return (
+    <div className='mb-5'>
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={image} />
+        <Card.Body>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>
+            {description}
+          </Card.Text>
+          <Card.Text>
+            <small className="text-muted">Price: {price}</small>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+
+    </div>
+  );
 };
 
 export default Service;
