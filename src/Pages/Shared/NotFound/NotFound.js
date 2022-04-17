@@ -1,9 +1,11 @@
 import React from 'react';
+import logo from '../../../Images/notfound/notFound.gif'
+import './NotFound.css'
 
 const NotFound = () => {
     return (
         <div>
-            <h2>Pages Not Found</h2>
+            <img className="w-100" src={logo} alt="" />
         </div>
     );
 };

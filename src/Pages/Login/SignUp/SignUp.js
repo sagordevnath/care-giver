@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import {auth} from '../../../firebase.init';
+
 import {useCreateUserWithEmailAndPassword} from "react-firebase-hooks/auth"
 // import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './SignUp.css';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import auth from '../../../firebase.init';
 
 const SignUp = () => {
     const [userInfo, setUserInfo] = useState({
@@ -15,18 +18,24 @@ const SignUp = () => {
     });
 
     const [errors, setErrors] = useState({
+        name: "",
         email: "",
         password: "",
+        confirmPassword: "",
         common: "",
     });
-    const [showPassword, setShowPassword] = useState(false);
+    // const [showPassword, setShowPassword] = useState(false);
 
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
-        error,
+        hookError,
       ] = useCreateUserWithEmailAndPassword(auth);
+
+      const handleNameInput = e => {
+          setUserInfo({...userInfo, name: "e.target.value"})
+      }
 
       const handleEmailInput = e => {
           const emailRegex = /\S+@\S+\.\S+/;
@@ -56,7 +65,7 @@ const SignUp = () => {
         }
       };
 
-      const handlePasswordMatch = e => {
+      const handleConfirmPasswordInput = e => {
           if(e.target.value === userInfo.password) {
               setUserInfo({...userInfo, confirmPassword: e.target.value});
               setErrors({...errors, password: ""})
@@ -70,6 +79,7 @@ const SignUp = () => {
 
       const handleSignUp = e => {
           e.preventDefault();
+          console.log(user);
           createUserWithEmailAndPassword(userInfo.email, userInfo.password);
       }
 
@@ -87,7 +97,18 @@ const SignUp = () => {
             }
 
         }
-      }, [hookError])
+      }, [hookError]);
+
+      const navigate = useNavigate();
+      const location = useLocation();
+      const from = location.state?.from?.pathname || "/";
+
+      useEffect(()=> {
+          if (user) {
+              navigate(from)
+              toast.success('Successfully SignUp');
+          }
+      },[user]);
 
     return (
         <div className="form-container">
@@ -95,16 +116,28 @@ const SignUp = () => {
                   <div className="inner-box">
                       <div className="card-front">
                           <h2>Sign Up</h2>
-                          <form>
-                              <input type="text" name="name" className="input-box" placeholder='Your Name' required id="" />
-                              <input type="email" name="email" className="input-box" placeholder='Your Email Id' required id="" />
-                              <input type="password" name="password" className="input-box" placeholder='Password' required id="" />
-                              <input type="password" name="confirm-password" className="input-box" placeholder='Confirm-Password' required id="" />
+                          <form onSubmit={handleSignUp}>
+                              <input type="text" name="name" onChange={handleNameInput} className="input-box" placeholder='Your Name' required id="" />
+                              <input type="email" name="email" onChange={handleEmailInput} className="input-box" placeholder='Your Email Id' required id="" />
+                              {errors?.email && <p>{errors.email}</p>}
+                              <input type="password" name="password" onChange={handlePasswordInput} className="input-box" placeholder='Password' required id="" />
+                              {errors?.password && <p>{errors.password}</p>}
+                              <input type="password" name="confirm-password" onChange={handleConfirmPasswordInput} className="input-box" placeholder='Confirm-Password' required id="" />
                               <button type="submit" className='submit-btn'>Sign Up</button>
                               <SocialLogin></SocialLogin>                                                            
                           </form>
                           <Link to="/login" className="btn">I'he an account</Link>
-                          
+                          <ToastContainer
+                          position="top-center"
+                          autoClose={5000}
+                          hideProgressBar={false}
+                          newestOnTop={false}
+                          closeOnClick
+                          rtl={false}
+                          pauseOnFocusLoss
+                          draggable
+                          pauseOnHover
+                          />
                       </div>                      
                   </div>
               </div>
