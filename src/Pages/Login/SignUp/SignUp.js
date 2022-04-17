@@ -6,8 +6,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './SignUp.css';
 import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 
 const SignUp = () => {
     const [userInfo, setUserInfo] = useState({
@@ -31,7 +32,7 @@ const SignUp = () => {
         user,
         loading,
         hookError,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
       const handleNameInput = e => {
           setUserInfo({...userInfo, name: "e.target.value"})
@@ -81,6 +82,11 @@ const SignUp = () => {
           e.preventDefault();
           console.log(user);
           createUserWithEmailAndPassword(userInfo.email, userInfo.password);
+          
+
+          if (loading) {
+            return <Loading></Loading>;
+          }
       }
 
       useEffect(()=>{
@@ -93,9 +99,13 @@ const SignUp = () => {
                 toast("Wrong password provided");
                 break;
             default:
-                toast('Something went wrong!!')
+                // toast('Something went wrong!!')
+                break;
             }
 
+        }
+        else if(user) {
+            toast.success('Successfully SignUp');            
         }
       }, [hookError]);
 
@@ -105,8 +115,7 @@ const SignUp = () => {
 
       useEffect(()=> {
           if (user) {
-              navigate(from)
-              toast.success('Successfully SignUp');
+              navigate(from)              
           }
       },[user]);
 
@@ -129,7 +138,7 @@ const SignUp = () => {
                           <Link to="/login" className="btn">I'he an account</Link>
                           <ToastContainer
                           position="top-center"
-                          autoClose={5000}
+                          autoClose={4000}
                           hideProgressBar={false}
                           newestOnTop={false}
                           closeOnClick

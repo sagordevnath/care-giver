@@ -65,21 +65,21 @@ const handlePasswordInput = e => {
     };
     
 
-    useEffect(()=>{
-        if (hookError) {
-            switch(hookError?.code){
-            case "auth/user-not-found":
-                toast("Invalid Email Provided");
-                break;
-            case "auth/internal-error":
-                toast("Wrong password provided");
-                break;
-            default:
-                toast.warning('Something went wrong!!')
-            }
+    // useEffect(()=>{
+    //     if (hookError) {
+    //         switch(hookError?.code){
+    //         case "auth/user-not-found":
+    //             toast("Invalid Email Provided");
+    //             break;
+    //         case "auth/internal-error":
+    //             toast("Wrong password provided");
+    //             break;
+    //         default:
+    //             toast.warning('Something went wrong!!')
+    //         }
 
-        }
-      }, [hookError]);
+    //     }
+    //   }, [hookError]);
 
       const navigate = useNavigate();
       const location = useLocation();

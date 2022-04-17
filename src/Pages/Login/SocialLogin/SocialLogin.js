@@ -6,26 +6,25 @@ import github from '../../../Images/social/github.png'
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { toast, ToastContainer } from 'react-toastify';
+import Loading from '../../Shared/Loading/Loading';
+import { useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
     const [signInWithGoogle, GoogleUser, GoogleLoading, GoogleError] = useSignInWithGoogle(auth);
+    const navigate = useNavigate();
 
     if (GoogleError) {
-        return toast('Something went wrong. Please try again!!')
+        toast('Something went wrong. Please try again!!')
       }
       if (GoogleLoading) {
-        return <p>Loading...</p>;
+        return <Loading></Loading>
       }
       if (GoogleUser) {
-        return (
-          <div>
-            <p>Signed In User: {GoogleUser.email}</p>
-          </div>
-        );
+        navigate('/')
       }
     return (
         <div>
-            <div className="hori-row d-flex justify-content-center">
+            <div className="d-flex justify-content-center">
                 <hr className="w-50" />
                 <p className="mx-3">or</p>
                 <hr className="w-50" />
