@@ -1,5 +1,5 @@
 import React from "react";
-import { Card,  } from "react-bootstrap";
+import { Button, Card,  } from "react-bootstrap";
 import './Service.css'
 
 const Service = ({ service }) => {
@@ -17,6 +17,7 @@ const Service = ({ service }) => {
             <small className="text-muted">Price: {price}</small>
           </Card.Text>
         </Card.Body>
+        <Button>Checkout</Button>
       </Card>
 
     </div>

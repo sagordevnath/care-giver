@@ -158,6 +158,7 @@ body {
     text-decoration: none;
     color: gold;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .button__icon {
