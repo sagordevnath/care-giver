@@ -17,7 +17,7 @@ const Service = ({ service }) => {
             <small className="text-muted">Price: {price}</small>
           </Card.Text>
         </Card.Body>
-        <Button>Checkout</Button>
+        <Button className="checkout-btn">Checkout</Button>
       </Card>
 
     </div>

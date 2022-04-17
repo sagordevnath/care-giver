@@ -1,0 +1,15 @@
+.social-btn {
+    width: 100%;
+	background: transparent;
+    background-color: rgb(163, 1, 160);
+	border: 1px solid #fff;	
+	height: 24px;
+	font-size: 12px;
+	border-radius: 20px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	outline: none;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+    margin-right: 10px;
+}
