@@ -13,8 +13,8 @@ const Banner = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Emotional Support</h3>
+            <p>It is a waste of energy when we try to conform to a pattern. To conserve energy we must be aware of how we dissipate energy.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -25,8 +25,8 @@ const Banner = () => {
           />
 
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Companionship and engaging in hobbies and activities</h3>
+            <p>I’m a fan of art therapy. Just being creative helps. I think everyone is creative in their own way.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -37,9 +37,9 @@ const Banner = () => {
           />
 
           <Carousel.Caption>
-            <h3>Third slide label</h3>
+            <h3>Medication reminders</h3>
             <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            MyTherapy is an ad-free, award-winning pill reminder and medication tracker.
             </p>
           </Carousel.Caption>
         </Carousel.Item>

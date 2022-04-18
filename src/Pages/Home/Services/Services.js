@@ -10,40 +10,40 @@ const Services = () => {
             description: 'You really have to be patient and you have to be loving and caringg.This is about making a difference in the lives of the elderly.'
         },       
         {   id: 2,
-            name: 'Home and Senior Care', 
+            name: 'Administering and supervising medications', 
             price: 100, 
             image: 'https://i.ibb.co/2ytsjGS/caregiver-slider1.jpg',
-            description: 'You really have to be patient and you have to be loving and caringg.This is about making a difference in the lives of the elderly.'
+            description: 'One of the recommendations to reduce medication errors and harm is to use the “five rights”: the right patient, the right drug, the right dose, the right route, and the right time.'
         },       
         {   id: 3,
-            name: 'Home and Senior Care', 
+            name: 'Pain care / control', 
             price: 100, 
             image: 'https://i.ibb.co/2ytsjGS/caregiver-slider1.jpg',
-            description: 'You really have to be patient and you have to be loving and caringg.This is about making a difference in the lives of the elderly.'
+            description: 'Pain management is an aspect of medicine and health care involving relief of pain (pain relief, analgesia, pain control) in various dimensions, from acute and simple to chronic and challenging.'
         },       
         {   id: 4,            
-            name: 'Home and Senior Care', 
+            name: 'Instruction and emotional support', 
             price: 100, 
             image: 'https://i.ibb.co/2ytsjGS/caregiver-slider1.jpg',
-            description: 'You really have to be patient and you have to be loving and caringg.This is about making a difference in the lives of the elderly.'
+            description: "According to the authors, those six tools are: (1) Reading for Meaning, (2) Compare and Contrast, (3) Inductive Learning, (4) Circle of Knowledge, (5) Write to Learn, and (6) Vocabulary's CODE."
         },       
         {   id: 5,
-            name: 'Home and Senior Care', 
+            name: 'Tracheostomy care', 
             price: 100, 
             image: 'https://i.ibb.co/2ytsjGS/caregiver-slider1.jpg',
-            description: 'You really have to be patient and you have to be loving and caringg.This is about making a difference in the lives of the elderly.'
+            description: 'Tracheostomy tubes need to be kept clear and clean. Taking good care of your tracheostomy will help prevent infection, plugs or blockages, and breathing problems.'
         },       
         {   id: 6,
-            name: 'Home and Senior Care', 
+            name: 'Monitoring vital signs', 
             price: 100, 
             image: 'https://i.ibb.co/2ytsjGS/caregiver-slider1.jpg',
-            description: 'You really have to be patient and you have to be loving and caringg.This is about making a difference in the lives of the elderly.'
+            description: 'Vital signs monitoring is crucial for living a long and healthy life. Vitals gives us a glimpse into our overall wellbeing. They signal early signs of an infection, prevent a misdiagnosis, detect symptom-less medical problems, and encourage us to make better choices.'
         },       
     ]
     return (
         <div className='container'>
-            <h2>Services</h2>
-            <div className="service">
+            <h2 className='text-center my-5'>Services</h2>
+            <div className="services">
             {
                 services.map(service => <Service key={service.id} service={service}/>)
 

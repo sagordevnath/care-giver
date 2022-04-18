@@ -1,3 +1,19 @@
 .banner {
     position: relative;
 }
+
+.banner img {
+    opacity: 0.7;
+}
+.banner h3{      
+    color: rgb(5, 202, 150);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #000;
+}
+.banner p {
+    color: rgb(129, 255, 61);
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px #000;
+}

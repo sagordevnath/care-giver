@@ -128,9 +128,9 @@ const SignUp = () => {
                           <form onSubmit={handleSignUp}>
                               <input type="text" name="name" onChange={handleNameInput} className="input-box" placeholder='Your Name' required id="" />
                               <input type="email" name="email" onChange={handleEmailInput} className="input-box" placeholder='Your Email Id' required id="" />
-                              {errors?.email && <p>{errors.email}</p>}
+                              {errors?.email && <p className='text-danger'>{errors.email}</p>}
                               <input type="password" name="password" onChange={handlePasswordInput} className="input-box" placeholder='Password' required id="" />
-                              {errors?.password && <p>{errors.password}</p>}
+                              {errors?.password && <p className='text-danger'>{errors.password}</p>}
                               <input type="password" name="confirm-password" onChange={handleConfirmPasswordInput} className="input-box" placeholder='Confirm-Password' required id="" />
                               <button type="submit" className='submit-btn'>Sign Up</button>
                               <SocialLogin></SocialLogin>                                                            
