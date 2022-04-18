@@ -5,7 +5,7 @@ import './About.css'
 const About = () => {
   return (
     <div className="about container">
-      <div className="card mb-3 p-4">
+      <div className="card about-info mb-3 p-4">
         <div className="row g-0">
           <div className="col-md-4">
             <img height="50px " src={image} className="img-fluid rounded-start" alt="..." />
