@@ -1,0 +1,30 @@
+.footer {
+    background-color: #bea9f8;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+.icon {
+    margin-top: 25px;
+}
+.icon a {
+    font-size: 1.5em;
+    color: #330aff;
+    margin: 15px;
+    border: 2px solid rgb(183, 0, 255);
+    border-radius: 50%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.237);
+    
+}
+.terms {
+    display: flex;
+    justify-content: space-between;
+}
+.terms a {
+    color: #000000;
+    font-size: 1.2em;
+    text-decoration: underline;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
