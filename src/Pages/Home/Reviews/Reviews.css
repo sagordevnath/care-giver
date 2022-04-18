@@ -3,3 +3,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
 }
+
+@media screen and (max-width: 768px) {
+    .reviews {
+        grid-template-columns: 1fr;
+    }
+}
+    

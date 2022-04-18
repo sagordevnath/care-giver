@@ -28,3 +28,27 @@
     margin-right: 10px;
     margin-bottom: 5px;
 }
+
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 10px;
+    }
+    .icon {
+        margin-top: 10px;
+    }
+    .icon a {
+        font-size: 1em;
+        margin: 5px;
+        padding: 5px;
+    }
+    .terms {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .terms a {
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+}
+    

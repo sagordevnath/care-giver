@@ -10,3 +10,16 @@
 .answer-body {    
     background-color: rgb(205, 255, 221);
 }
+
+@media screen and (max-width: 768px) {
+    .answer {        
+        padding: 10px;
+    }
+    .answer-body {
+        width: 100%;
+    }
+    Card {
+        width:100%;
+    }
+}
+    
