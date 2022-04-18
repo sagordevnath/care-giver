@@ -18,7 +18,7 @@ const Header = () => {
     <div className="navbar">
       <Navbar collapseOnSelect expand="lg">
         <Container>
-          <Navbar.Brand className="text-uppercase fs-3 text-light" href="#home"> <img width='60px' src={logo} alt="" /> Care Giver</Navbar.Brand>
+          <Navbar.Brand className="text-uppercase fs-3 text-primary" href="#home"> <img width='60px' src={logo} alt="" /> Care Giver</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
