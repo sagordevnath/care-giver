@@ -13,24 +13,25 @@ const Service = ({ service }) => {
   //   navigate("/checkout");
   // }
   return (
-    <div className='mb-5'>
-      <Card className='service' style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={image} />
-        <Card.Body>
-          <Card.Title>{name}</Card.Title>
-          <Card.Text>
-            {description}
-          </Card.Text>
-          <Card.Text>
-            <small className="text-muted">Price: {price}</small>
-          </Card.Text>
-        </Card.Body>
-        <Link to='/checkout'>
+    
+      <div class="card-group">
+  <div class="service card">
+    <img src={image} class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{name}</h5>
+      <p class="card-text">{description}</p>
+    </div>
+    <div class="card-footer">
+    <Link to='/checkout'>
           <button className="checkout-btn">Checkout</button>
         </Link>
-      </Card>
-
     </div>
+  </div>
+  
+  
+</div>
+        
+      
   );
 };
 

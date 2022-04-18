@@ -6,6 +6,7 @@ import { useAuthState} from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import logo from '../../../Images/logo/logo.png'; 
 import "./Header.css";
+import CustomLink from "../CustomActiveLink/CustomLink";
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -22,23 +23,23 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav className='nav-link'>
-              <Nav.Link as={Link} to="/">
+              <CustomLink as={Link} to="/">
                 Home
-              </Nav.Link>
-              <Nav.Link as={Link} to="/Services">
+              </CustomLink>
+              <CustomLink as={Link} to="/Services">
                 Services
-              </Nav.Link>
-              <Nav.Link as={Link} to="/Blogs">
+              </CustomLink>
+              <CustomLink as={Link} to="/Blogs">
                 Blogs
-              </Nav.Link>
-              <Nav.Link as={Link} to="/About">
+              </CustomLink>
+              <CustomLink as={Link} to="/About">
                 About
-              </Nav.Link>
-              {!user ? <Nav.Link as={Link} to="/Login">
+              </CustomLink>
+              {!user ? <CustomLink as={Link} to="/Login">
                 Login
-              </Nav.Link> :<Nav.Link onClick={handleLogout} as={Link} to="/Login">
+              </CustomLink> :<CustomLink onClick={handleLogout} as={Link} to="/Login">
                 Log out
-              </Nav.Link>}
+              </CustomLink>}
             </Nav>
           </Navbar.Collapse>
         </Container>

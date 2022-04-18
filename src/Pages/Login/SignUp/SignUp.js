@@ -6,7 +6,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './SignUp.css';
 import { toast, ToastContainer } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 
@@ -98,6 +97,9 @@ const SignUp = () => {
             case "auth/invalid-password":
                 toast("Wrong password provided");
                 break;
+            case "auth/email-already-in-use":
+                toast("Email already in use");
+                break;
             default:
                 // toast('Something went wrong!!')
                 break;
@@ -137,15 +139,7 @@ const SignUp = () => {
                           </form>
                           <Link to="/login" className="btn">I'he an account</Link>
                           <ToastContainer
-                          position="top-center"
-                          autoClose={4000}
-                          hideProgressBar={false}
-                          newestOnTop={false}
-                          closeOnClick
-                          rtl={false}
-                          pauseOnFocusLoss
-                          draggable
-                          pauseOnHover
+                          
                           />
                       </div>                      
                   </div>
